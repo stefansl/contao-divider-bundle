@@ -1,0 +1,11 @@
+<?php if ($this->tableless): ?>
+
+    <hr class="widget widget-divider<?php if ($this->class): ?> <?= $this->class ?><?php endif; ?>">
+
+<?php else: ?>
+
+    <tr class="<?= $this->rowClass ?>">
+        <td colspan="2" class="colspan headline"><hr class="widget widget-divider<?php if ($this->class): ?> <?= $this->class ?><?php endif; ?>"></td>
+    </tr>
+
+<?php endif; ?>

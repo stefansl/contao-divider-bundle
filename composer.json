@@ -1,0 +1,46 @@
+{
+    "name": "stefansl/contao-divider-bundle",
+    "description": "ContentElement for Contao to generate hr. Simply choose element type \"divider\" and save.",
+    "keywords": ["contao", "extension", "usability", "divider", "horizontal", "rule", "ruler", "hr", "bundle", "pulgin", "content-element", "widget"],
+    "type": "contao-bundle",
+    "homepage": "https://github.com/stefansl/contao-divider-bundle",
+    "license": "LGPL-3.0+",
+    "authors":[
+        {
+            "name":"Stefan Schulz-Lauterbach",
+            "homepage":"https://clickpress.de",
+            "role":"Developer"
+        }
+    ],
+    "support":{
+        "issues":"https://github.com/stefansl/contao-divider-bundle/issues",
+        "source":"https://github.com/stefansl/contao-divider-bundle/"
+    },
+    "require":{
+        "php": ">=5.6.0",
+        "contao/core-bundle":"~4.4"
+    },
+    "replace":{
+        "contao-legacy/divider":"self.version",
+        "clickpress/divider":"self.version",
+        "stefansl/divider":"self.version"
+
+    },
+    "extra":{
+        "contao-manager-plugin": "StefanSl\\DividerBundle\\ContaoManager\\Plugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "StefanSl\\DividerBundle\\": "src"
+        },
+        "classmap": [
+            "src/Resources/contao"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+        ]
+    }
+}
