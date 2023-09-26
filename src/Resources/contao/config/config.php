@@ -13,14 +13,7 @@
  */
 
 
- 
- array_insert($GLOBALS['TL_CTE']['texts'], 10, array
- (
- 	'divider' => 'StefanSl\DividerBundle\ContentDivider')
- );
-
+$GLOBALS['TL_CTE']['texts']['divider'] = 'StefanSl\DividerBundle\ContentDivider';
 
 $GLOBALS['TL_FFL']['divider'] = 'StefanSl\DividerBundle\WidgetDivider';
 $GLOBALS['BE_FFL']['divider'] = 'StefanSl\DividerBundle\WidgetDivider';
-
-?>
