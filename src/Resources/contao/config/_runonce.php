@@ -8,7 +8,9 @@ class DividerRunonceJobTemp extends Controller
     }
     public function run()
     {
-        if ((@include(TL_ROOT . '/system/modules/Divider/config/config.php')) !== false)
+        $rootDir = System::getContainer()->getParameter('kernel.project_dir');
+        
+        if ((@include($rootDir . '/system/modules/Divider/config/config.php')) !== false)
         {
             $this->Files->rrdir('system/modules/Divider');
         }
@@ -16,4 +18,3 @@ class DividerRunonceJobTemp extends Controller
 }
 $objDividerRunonceJob = new DividerRunonceJobTemp();
 $objDividerRunonceJob->run();
-?>
