@@ -12,6 +12,6 @@
  * @filesource
  */
 
-$GLOBALS['TL_DCA']['tl_form_field']['palettes']['divider'] = '{type_legend},type;{template_legend:hide},customTpl;{expert_legend:hide},class;{template_legend:hide},customTpl';
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['divider'] = '{type_legend},type;{template_legend:hide},customTpl;{expert_legend:hide},class;{invisible_legend:hide},invisible';
 
 ?>
