@@ -1,33 +1,30 @@
 <?php
-/**
- * @copyright  Stefan Schulz-Lauterbach 2017 <https://clickpress.de>
- * @author     Stefan Schulz-Lauterbach
- * @package    Divider
- * @license    LGPL-3.0+
- * @see	       https://github.com/stefansl/contao-divider-bundle
+
+declare(strict_types=1);
+
+/*
+ * This file is part of Contao Divider Bundle.
  *
+ * (c) Stefan Schulz-Lauterbach <https://clickpress.de>
+ * @license LGPL-3.0-or-later
+ * @link https://github.com/stefansl/contao-divider-bundle
  */
 
 namespace StefanSl\DividerBundle\ContaoManager;
-use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
-use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
-use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 
-/**
- * Plugin for the Contao Manager.
- *
- * @author Stefan Schulz-Lauterbach
- */
+use Contao\CoreBundle\ContaoCoreBundle;
+use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
+use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
+use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use StefanSl\DividerBundle\StefanSlDividerBundle;
+
 class Plugin implements BundlePluginInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function getBundles(ParserInterface $parser)
+    public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create('StefanSl\DividerBundle\StefanSlDividerBundle')
-                ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
+            BundleConfig::create(StefanSlDividerBundle::class)
+                ->setLoadAfter([ContaoCoreBundle::class])
                 ->setReplace(['divider']),
         ];
     }

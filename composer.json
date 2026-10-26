@@ -1,45 +1,74 @@
 {
     "name": "stefansl/contao-divider-bundle",
-    "description": "ContentElement for Contao to generate hr. Simply choose element type \"divider\" and save.",
-    "keywords": ["contao", "extension", "usability", "divider", "horizontal", "rule", "ruler", "hr", "bundle", "pulgin", "content-element", "widget"],
+    "description": "Content element and form field for Contao to generate a horizontal rule (hr). Simply choose the element type \"divider\" and save.",
+    "keywords": [
+        "contao",
+        "extension",
+        "usability",
+        "divider",
+        "horizontal",
+        "rule",
+        "ruler",
+        "hr",
+        "bundle",
+        "plugin",
+        "content-element",
+        "widget"
+    ],
     "type": "contao-bundle",
     "homepage": "https://github.com/stefansl/contao-divider-bundle",
-    "license": "LGPL-3.0+",
-    "authors":[
+    "license": "LGPL-3.0-or-later",
+    "authors": [
         {
-            "name":"Stefan Schulz-Lauterbach",
-            "homepage":"https://clickpress.de",
-            "role":"Developer"
+            "name": "Stefan Schulz-Lauterbach",
+            "homepage": "https://clickpress.de",
+            "role": "Developer"
         }
     ],
-    "support":{
-        "issues":"https://github.com/stefansl/contao-divider-bundle/issues",
-        "source":"https://github.com/stefansl/contao-divider-bundle/"
+    "support": {
+        "issues": "https://github.com/stefansl/contao-divider-bundle/issues",
+        "source": "https://github.com/stefansl/contao-divider-bundle/"
     },
-    "require":{
-        "contao/core-bundle":"~4.4 || ^5.0"
+    "require": {
+        "php": "^8.1",
+        "contao/core-bundle": "^5.3 || ^6.0",
+        "symfony/config": "^6.4 || ^7.0 || ^8.0",
+        "symfony/dependency-injection": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-foundation": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-kernel": "^6.4 || ^7.0 || ^8.0"
     },
-    "replace":{
-        "contao-legacy/divider":"self.version",
-        "clickpress/divider":"self.version",
-        "stefansl/divider":"self.version"
-
+    "require-dev": {
+        "contao/manager-plugin": "^2.12",
+        "contao/test-case": "^5.3 || ^6.0"
     },
-    "extra":{
+    "replace": {
+        "contao-legacy/divider": "self.version",
+        "clickpress/divider": "self.version",
+        "stefansl/divider": "self.version"
+    },
+    "extra": {
         "contao-manager-plugin": "StefanSl\\DividerBundle\\ContaoManager\\Plugin"
     },
     "autoload": {
         "psr-4": {
-            "StefanSl\\DividerBundle\\": "src"
-        },
-        "classmap": [
-            "src/Resources/contao"
-        ],
-        "exclude-from-classmap": [
-            "src/Resources/contao/config/",
-            "src/Resources/contao/dca/",
-            "src/Resources/contao/languages/",
-            "src/Resources/contao/templates/"
-        ]
+            "StefanSl\\DividerBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StefanSl\\DividerBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": false,
+            "contao/manager-plugin": false,
+            "php-http/discovery": false
+        }
+    },
+    "scripts": {
+        "cs-fixer": "@php tools/ecs/vendor/bin/ecs check --config tools/ecs/config/default.php --fix --ansi",
+        "cs-check": "@php tools/ecs/vendor/bin/ecs check --config tools/ecs/config/default.php --ansi",
+        "unit-tests": "@php vendor/bin/phpunit --colors=always"
     }
 }
